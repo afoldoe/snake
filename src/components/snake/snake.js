@@ -38,6 +38,7 @@ function controller($scope, $timeout, $window) {
 	$scope.score = 0;
 
 	$scope.setStyling = function(col, row) {
+		console.log(snake.parts[0].x);
 		if(isGameOver) return colors.game_over
 		else if(fruit.x == row && fruit.y == col) return colors.fruit
 		else if(snake.parts[0].x == row && snake.parts[0].y == col) return colors.snake_head
@@ -47,7 +48,7 @@ function controller($scope, $timeout, $window) {
 
 	function update() {
 		let newHead = getNewHead();
-		if(boardCollision(newHead) || seldCollision(newHead)) return gameOver()
+		if(boardCollision(newHead) || snakeCollision(newHead)) return gameOver()
 		else if(fruitCollision(newHead)) eatFruit();
 		let oldTail = snake.parts.pop();
 		$scope.board[oldTail.y][oldTail.x] = false;
@@ -133,13 +134,15 @@ function controller($scope, $timeout, $window) {
 		tempDirection = directions.left;
 		isGameOver = false;
 		interval = 150;
-	};
 
-	//initial snake
-	for(let i = 0; i < 5; i++) {
-		snake.parts.push({x: 10 + i, y: 10});
-	}
-	resetFruit();
-	update();
+		//initial snake
+		for(let i = 0; i < 5; i++) {
+			snake.parts.push({x: 10 + i, y: 10});
+		}
+		resetFruit();
+		update();
+		};
+
+	
 
 };
