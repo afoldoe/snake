@@ -46,8 +46,7 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
-    "camelcase": "^3.0.0",
-    "html-webpack-plugin": "^2.22.0"
+    "camelcase": "^3.0.0"
   },
   "babel": {
     "presets": [
