@@ -2,9 +2,8 @@
 	font-family: "Lucida Grande";
 }
 
-#gameContainer, #pastScores {
-	width: 600px;
-	float: left;
+.center {
+	text-align: center;
 }
 
 .row {
@@ -18,6 +17,11 @@
 	display: inline-block;
 }
 
+#startGame:hover {
+	color: red;
+	cursor: pointer;
+}
+
 #startGame {
 	width: 120px;
 	padding: 10px;
@@ -27,7 +31,17 @@
 	color: white;
 }
 
-#startGame:hover {
-	color: red;
-	cursor: pointer;
+#gameContainer, #pastScores {
+	width: 600px;
+	float: left;
+}
+
+#title {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#titleDiv {
+	max-width: 100%;
+	background-color: #96B01B;
+	max-height: 4rem;
 }

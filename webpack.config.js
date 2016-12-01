@@ -6,7 +6,7 @@ module.exports = {
     path: `./src/public`,
     filename: `bundle.js`
   },
-  devtool: `source-map`,
+  devtool: `cheap-eval-source-map`,
   plugins: [new HtmlWebpackPlugin({
     template: `./src/app.html`
   })],

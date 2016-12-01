@@ -121,7 +121,7 @@ function controller($scope, $timeout, $window) {
 	};
 	setupBoard();
 
-	$window.addEventListener('keyup', (e) => {
+	$window.addEventListener('keydown', (e) => {
 		if(e.keyCode == directions.left && snake.direction !== directions.right) tempDirection = directions.left
 		else if(e.keyCode == directions.right && snake.direction !== directions.left) tempDirection = directions.right
 		else if(e.keyCode == directions.up && snake.direction !== directions.down) tempDirection = directions.up
